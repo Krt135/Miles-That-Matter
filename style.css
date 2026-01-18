@@ -1,6 +1,8 @@
 :root{
 
 --wixBgColor: #f0efea;
+--buttonColor: #4c575d;
+--smallTextColor: #5b5f51;
 
 
 }
@@ -11,6 +13,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid black;
 
 }
 
@@ -20,9 +23,6 @@ header {
   padding: 30px;
 }
 
-p {
-  font-family: 'Nanum Gothic', sans-serif;
-}
 
 #logo {
 
@@ -45,6 +45,34 @@ nav {
 
 }
 
+
+h1 {
+
+  font-size: 4.2rem;
+  font-family: "Syne", sans-serif;
+  padding: 10px;
+  margin-left: 60px;
+
+}
+
+.events h2 {
+
+  font-size: 2.5rem;
+  font-family: "Syne", sans-serif;
+  
+}
+
+
+
+.events{
+
+  width: 90%;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-bottom: 80px;
+
+}
+
 .link {
 
     background-color: #13242c;
@@ -57,9 +85,9 @@ nav {
 
 #title {
 
-    font-family: "Manrope", sans-serif;
+    font-family: "Wix Madefor Text" sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
     margin-left: 100px;
 
@@ -73,9 +101,106 @@ nav {
   margin: 0;
 }
 
+.events .content{
 
-h2 {
-  font-family: 'Rubik Bubbles', system-ui;
+  display: flex;            /* enable flex layout */
+  align-items: center;      /* vertically center items */
+  justify-content: space-between;
+  gap: 20px;
+
+
+}
+
+.events .text {
+
+  padding-left: 60px;
+  flex: 1;
+  font-family: "Syne", sans-serif !important;
+  
+  /* takes remaining space */
+}
+
+.mission  h2 {
+
+  font-size: 2.5rem;
+  font-family: "Syne", sans-serif;
+  padding: 10px;
+  font-size: 2rem;
+  margin-left: 50px;
+  
+
+
+}
+
+.events .text p {
+
+  color: var(--smallTextColor);
+  font-size: 1.1rem;
+
+}
+
+.events .text a {
+
+  display: inline-block;   /* ensures margin works properly */
+  margin-top: 30px;        /* space above the link */
+  text-decoration: none;   /* optional: remove underline */
+  font-weight: 500;     
+
+
+}
+
+.mission .content {
+  
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  height: 450px; /* Adjust this value to your "taste" */
+  overflow: hidden; /* Prevents content from spilling out if it's too long */
+
+}
+
+.mission .text {
+
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Ensures it takes up the left side properly */
+  padding-left: 60px;
+  font-size: 22px;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.image {
+  flex: 1;                  /* takes remaining space */
+  margin: 0; /* pushes image to the right */
+}
+
+.mission .image {
+  flex: 2;                  /* takes remaining space */
+  display: flex;
+  justify-content: flex-end; /* pushes image to the right */
+}
+
+.mission .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This keeps the image from looking stretched/squished */
+}
+
+.image img {
+  max-width: 100%;          /* ensures image fits its container */
+  height: auto;     /* optional: rounded corners */
+}
+
+
+.mission {
+
+  border: 1px solid black;
+  background-color: #f8f7f5;
+
+
+
 }
 
 a {
