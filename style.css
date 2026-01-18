@@ -1,14 +1,23 @@
+:root{
+
+--wixBgColor: #f0efea;
+
+
+}
 
 header {
 
-    background-color: #f1efe9;
-    color: black;
-    padding: 10px 20px;
+  background-color: var(--wixBgColor);  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;     
+}
 
+.brand {
+  display: flex;
+  align-items: center;
+  padding: 30px;
 }
 
 p {
@@ -20,18 +29,54 @@ p {
 
     width: 150px;
     height: 150px !important;
+    padding: 0px 20px;
+    
 
+}
+
+nav {
+
+    margin-right: 60px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    
+
+}
+
+.link {
+
+    background-color: #13242c;
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 16px 32px;
+    transition: 0.5s;
+}
+
+#title {
+
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 100px;
+
+
+}
+
+#title h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 60px;
+  margin: 0;
 }
 
 
 h2 {
   font-family: 'Rubik Bubbles', system-ui;
 }
-#logo {
-    height: 60px;
-    padding: 0px 20px;
-}
-
 
 a {
     color: black;
@@ -46,7 +91,7 @@ body {
     margin: 0;
     padding: 0;
     animation: fadeIn 2s;
-    background-color: #1A1210;
+    background-color: var(--wixBgColor);
 
 }
 
@@ -95,8 +140,9 @@ header > div {
 
 a:hover{
 
-    color: white;
-    border: 2px black solid;
-    transition: 1s;
+    background-color: #4c575d;
+    border: 2px white solid;
+    transition: 0.5s;
+
 
 }
