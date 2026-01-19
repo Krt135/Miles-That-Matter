@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Syne:wght@400..800&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
 
     <body>
@@ -17,7 +17,7 @@
 
                 <img id="logo" src="images/Miles-that-matter.jpg">
 
-                <div id="title">
+                <div data-aos="fade-up" data-aos-delay="1000" id="title">
                     <h1>Miles That Matter</h1>
                 </div>
 
@@ -35,7 +35,7 @@
 
         <main>
 
-                <h1>Upcoming Events</h1>
+                <h1 data-aos="fade-up" data-aos-delay="1000">Upcoming Events</h1>
             
 
             <section class = "events">
@@ -77,7 +77,7 @@
 
                     <div class="text">
 
-                        <p>Our mission is to make running accessible for underprivileged students and young kids by providing donated gear,
+                        <p data-aos="fade-up" data-aos-delay="500">Our mission is to make running accessible for underprivileged students and young kids by providing donated gear,
                              training programs, and competition opportunities. Through community support and fundraising events, 
                             we empower young athletes to develop confidence, discipline, and a lifelong passion for the sport.</p>
 
@@ -94,10 +94,109 @@
 
             </section>
 
-            <section class = "impact">
+            <section class="impact-section">
+  
+  <h1 class="main-title" data-aos="fade-up">Our Impact</h1>
 
+  <div class="impact-grid">
 
-            </section>
+    <div class="impact-item" data-aos="fade-up" data-aos-delay="100">
+      <hr>
+      <h3>Competitive Opportunities</h3>
+      <span class="subtitle">Engagement</span>
+      <p>Organize races, track meets, and fun runs to give students a chance to compete and set goals.</p>
+    </div>
+
+    <div class="impact-item" data-aos="fade-up" data-aos-delay="200">
+      <hr>
+      <h3>Shoe Donation</h3>
+      <a href="#" class="donate-btn">DONATE</a>
+      <p>Our shoe donation program ensures children have the proper footwear to participate in sports and run comfortably. This initiative is essential for empowering students to engage in active lifestyles.</p>
+    </div>
+
+    <div class="impact-item" data-aos="fade-up" data-aos-delay="300">
+      <hr>
+      <h3>Training Programs</h3>
+      <span class="subtitle">Empower Youth</span>
+      <p>Offer coaching, mentorship, and structured running programs to help students develop their skills and stay active.</p>
+    </div>
+
+    <div class="impact-item" data-aos="fade-up" data-aos-delay="400">
+      <hr>
+      <h3>Fundraising & Community Engagement</h3>
+      <span class="subtitle">Foster Community</span>
+      <p>Host events that raise funds and awareness while fostering a supportive running community..</p>
+    </div>
+
+    <div class="impact-item" data-aos="fade-up" data-aos-delay="500">
+      <hr>
+      <h3>Educational Workshops</h3>
+      <span class="subtitle">Health</span>
+      <p>Provide guidance on nutrition, injury prevention, and mental resilience to help young runners succeed.</p>
+    </div>
+
+    <div class="impact-item" data-aos="fade-up" data-aos-delay="600">
+      <hr>
+      <h3>Online Resources</h3>
+      <p>Available information for running on nutrition, injury prevention, and mental resilience to help young runners succeed.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact-section">
+
+  <h1 class="main-title" data-aos="fade-up">Contact Us</h1>
+
+  <div class="contact-container">
+    <div class="contact-row" data-aos="fade-up" data-aos-delay="100">
+      <div class="contact-info-left">
+        <h3>President: Eddie Zhan</h3>
+      </div>
+      <div class="contact-info-right">
+        <p>Phone: 732-485-9512</p>
+        <p>Email: zhan.eddie5@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="contact-row" data-aos="fade-up" data-aos-delay="200">
+      <div class="contact-info-left">
+        <h3>Vice President: Kadin Mago</h3>
+      </div>
+      <div class="contact-info-right">
+        <p>Email: Kadin5480@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="contact-row" data-aos="fade-up" data-aos-delay="300">
+      <div class="contact-info-left">
+        <h3>Secretary: Max Romeo</h3>
+      </div>
+      <div class="contact-info-right">
+        <p>Email: romeo.lorenz.maximus@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="contact-row" data-aos="fade-up" data-aos-delay="400">
+      <div class="contact-info-left">
+        <h3>Treasurer: Morgan Torres</h3>
+      </div>
+      <div class="contact-info-right">
+        <p>Email: morganltorres2009@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-row" data-aos="fade-up" data-aos-delay="500">
+      <div class="contact-info-left">
+        <h3>Website dev: Kartikeya Pant</h3>
+      </div>
+      <div class="contact-info-right">
+        <p>Email: kartikeyapant2009@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</section>
 
         </main>
 
@@ -107,7 +206,15 @@
 
         </footer>
 
-        <script></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init({
+    duration: 1000,   // How long the animation lasts (in milliseconds)
+    once: true,      // Whether animation should happen only once - while scrolling down
+    mirror: false,   // Whether elements should animate out while scrolling past them
+    offset: 120,     // Change offset to trigger animations sooner or later (px)
+  });
+</script>
     </body>
 
 </html>

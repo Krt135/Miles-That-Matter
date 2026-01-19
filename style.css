@@ -203,6 +203,144 @@ h1 {
 
 }
 
+/* --- Base Settings & Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400&display=swap');
+
+.impact-section {
+  background-color: #F2F0E9; /* The beige/bone background color */
+  padding: 80px 5%; /* Spacing around the whole section */
+  color: #1a1a1a; /* Dark text color */
+  font-family: 'Inter', sans-serif; /* Body font */
+}
+
+/* --- Main Big Title --- */
+.main-title {
+  color: #1a2b34;
+  margin-left: -20px;
+}
+
+.contact-section .main-title {
+  
+  margin-top: -20px;
+
+}
+
+/* --- Grid Layout --- */
+.impact-grid {
+  display: grid;
+  /* Creates 3 equal columns */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 60px; /* Generous space between columns */
+  align-items: start; /* Aligns content to the top */
+}
+
+/* --- Individual Column Styling --- */
+.impact-item hr {
+  border: none;
+  border-top: 1px solid #999; /* Thin divider line */
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.impact-item h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #1a2b34;
+}
+
+.impact-item .subtitle {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.impact-item p {
+  line-height: 1.6; /* Makes text easy to read */
+  color: #333;
+  font-size: 1rem;
+}
+
+/* --- The Donate Button --- */
+.donate-btn {
+  display: inline-block;
+  background-color: #4A555C; /* Dark Slate Grey */
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  transition: background 0.3s ease;
+}
+
+.donate-btn:hover {
+  background-color: #2c353b; /* Darker on hover */
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .impact-grid {
+    grid-template-columns: 1fr; /* Stack columns on phone */
+    gap: 40px;
+  }
+  
+  .main-title {
+    font-size: 3rem;
+  }
+}
+
+.contact-section {
+  background-color: #f7f7f7; /* Matching the lighter background from image 2 */
+  padding: 80px 5%;
+  font-family: 'Inter', sans-serif;
+  border: 1px solid black;
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin-top: 40px;
+}
+
+/* Creating the two-column row */
+.contact-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 40px; /* Space between people */
+}
+
+.contact-info-left {
+  flex: 0 0 400px; /* Gives the Name column a fixed width so emails line up */
+}
+
+.contact-info-left h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  margin: 0;
+  color: #1a2b34;
+}
+
+.contact-info-right p {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Fix for mobile: stack the name and email on top of each other */
+@media (max-width: 768px) {
+  .contact-row {
+    flex-direction: column;
+  }
+  .contact-info-left {
+    flex: none;
+    margin-bottom: 10px;
+  }
+}
+
 a {
     color: black;
     text-decoration: none;
@@ -270,4 +408,16 @@ a:hover{
     transition: 0.5s;
 
 
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out; /* Controls the speed and feel */
+}
+
+/* Active state: fully visible and at its natural position */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
