@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Miles that Matter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Syne:wght@400..800&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+
+        <div class="brand">
+
+            <img id="logo" src="images/Miles-that-matter.jpg">
+
+            <div data-aos="fade-up" data-aos-delay="1000" id="title">
+                <h1>Miles That Matter</h1>
+            </div>
+
+        </div>
+
+        <nav>
+
+            <a class="link" href="index.html">Home</a>
+            <a class="link" href="events.html">Events</a>
+            <a class="link" href="about.html">About Us</a>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="events-list">
+
+            <h2>Upcoming Events</h2>
+
+            <div class="event-card" data-aos="fade-up">
+
+                <div class="event-card-image-wrapper">
+                    <img src="images/cool_trees.png" alt="Event Image">
+                </div>
+
+                <h3>First introduction meeting</h3>
+                <p class="event-details">Date and time is TBD | Location is TBD</p>
+                <a href="#" class="more-info">More info</a>
+
+            </div>
+
+
+        </section>
+
+        <section class="contact-section">
+
+            <h1 class="main-title" data-aos="fade-up">Contact Us</h1>
+
+            <div class="contact-container">
+                <div class="contact-row" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-info-left">
+                        <h3>President: Eddie Zhan</h3>
+                    </div>
+                    <div class="contact-info-right">
+                        <p>Phone: 732-485-9512</p>
+                        <p>Email: zhan.eddie5@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-row" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-info-left">
+                        <h3>Vice President: Kadin Mago</h3>
+                    </div>
+                    <div class="contact-info-right">
+                        <p>Email: Kadin5480@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-row" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-info-left">
+                        <h3>Secretary: Max Romeo</h3>
+                    </div>
+                    <div class="contact-info-right">
+                        <p>Email: romeo.lorenz.maximus@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-row" data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-info-left">
+                        <h3>Treasurer: Morgan Torres</h3>
+                    </div>
+                    <div class="contact-info-right">
+                        <p>Email: morganltorres2009@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-row" data-aos="fade-up" data-aos-delay="500">
+                <div class="contact-info-left">
+                    <h3>Website dev: Kartikeya Pant</h3>
+                </div>
+                <div class="contact-info-right">
+                    <p>Email: kartikeyapant2009@gmail.com</p>
+                </div>
+            </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,   // How long the animation lasts (in milliseconds)
+            once: true,      // Whether animation should happen only once - while scrolling down
+            mirror: false,   // Whether elements should animate out while scrolling past them
+            offset: 120,     // Change offset to trigger animations sooner or later (px)
+        });
+    </script>
+
+</body>
+
+</html>
