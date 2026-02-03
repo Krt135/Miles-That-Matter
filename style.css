@@ -710,3 +710,134 @@ header > div {
         grid-template-columns: 1fr;
     }
 }
+
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Controls the speed of the fade */
+}
+
+/* 2. Class to trigger the fade-in (applied via JS on load) */
+body.loaded {
+    opacity: 1;
+}
+
+/* 3. Class to trigger the fade-out (applied via JS on click) */
+body.fade-out {
+    opacity: 0;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: -70px; /* Hidden off-screen */
+    z-index: 99;
+    width: 50px;
+    height: 50px;
+    background-color: #1a2b34;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    /* This centers the arrow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* The Progress Ring needs to sit behind or perfectly around the icon */
+.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg); /* Start the line at the top */
+    pointer-events: none; /* So the ring doesn't interfere with clicks */
+}
+
+/* The Arrow Icon */
+#backToTop i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+/* Fun hover effect: make the arrow bounce up slightly */
+#backToTop:hover i {
+    transform: translateY(-3px);
+}
+
+#backToTop.show {
+    right: 30px; /* Slide in */
+}
+
+.progress-ring__circle {
+    transition: stroke-dashoffset 0.1s;
+    stroke-dasharray: 138.23; /* This is the circumference (2 * PI * r) */
+    stroke-dashoffset: 138.23; /* Starts empty */
+}
+
+#backToTop i {
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+}
+
+/* --- Under Construction Section --- */
+.construction-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background-color: #f8f7f5; /* Light neutral background */
+    margin: 40px auto;
+    width: 90%;
+    border: 1px solid black; /* Matches your other section borders */
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.construction-icon {
+    font-size: 3rem;
+    color: #1a2b34;
+    margin-bottom: 20px;
+}
+
+.construction-content h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.5rem;
+    color: #1a2b34;
+    margin-bottom: 15px;
+}
+
+.construction-content p {
+    font-family: 'Inter', sans-serif;
+    color: #5b5f51;
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
+
+/* Optional: Fun Animated Progress Bar */
+.loading-bar-container {
+    width: 200px;
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.loading-bar-progress {
+    width: 50%;
+    height: 100%;
+    background-color: #ffd700; /* Gold highlight */
+    border-radius: 10px;
+    animation: construction-shimmer 2s infinite ease-in-out;
+}
+
+@keyframes construction-shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+}

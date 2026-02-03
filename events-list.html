@@ -10,6 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=Manrope&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Syne:wght@400..800&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -30,6 +31,7 @@
             <a class="link" href="index.html">Home</a>
             <a class="link" href="events.html">Events</a>
             <a class="link" href="donate.html">Donate</a>
+            <a class = "link" href = "groups.html">Groups</a>
 
         </nav>
 
@@ -122,17 +124,17 @@
             </div>
         </section>
 
+        <button id="backToTop" title="Go to top">
+    <svg class="progress-ring" width="50" height="50">
+        <circle class="progress-ring__circle" stroke="#ffd700" stroke-width="3" fill="transparent" r="22" cx="25" cy="25"/>
+    </svg>
+    <i class="fas fa-chevron-up"></i>
+</button>
+
     </main>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script>
-        AOS.init({
-            duration: 1000,   // How long the animation lasts (in milliseconds)
-            once: true,      // Whether animation should happen only once - while scrolling down
-            mirror: false,   // Whether elements should animate out while scrolling past them
-            offset: 120,     // Change offset to trigger animations sooner or later (px)
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 

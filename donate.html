@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -31,6 +32,7 @@
             <a class="link" href="index.html">Home</a>
             <a class="link" href="events-list.html">Events</a>
             <a class="link" href="donate.html">Donate</a>
+            <a class = "link" href = "groups.html">Groups</a>
 
         </nav>
     </header>
@@ -160,36 +162,19 @@
       </div>
       </div>
     </section>
+
+    <button id="backToTop" title="Go to top">
+    <svg class="progress-ring" width="50" height="50">
+        <circle class="progress-ring__circle" stroke="#ffd700" stroke-width="3" fill="transparent" r="22" cx="25" cy="25"/>
+    </svg>
+    <i class="fas fa-chevron-up"></i>
+</button>
+
 </main>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script>
-        AOS.init({
-            duration: 1000,   // How long the animation lasts (in milliseconds)
-            once: true,      // Whether animation should happen only once - while scrolling down
-            mirror: false,   // Whether elements should animate out while scrolling past them
-            offset: 120,     // Change offset to trigger animations sooner or later (px)
-        });
-    // 1. Select all donation buttons
-    const buttons = document.querySelectorAll('.don-btn');
+<script src="script.js"></script>
 
-    // 2. Add a click event to each button
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            
-            // A. Find the parent container (the specific row)
-            const parentRow = this.parentElement;
-            
-            // B. Remove 'active' class from all OTHER buttons in this specific row
-            const siblings = parentRow.querySelectorAll('.don-btn');
-            siblings.forEach(sibling => sibling.classList.remove('active'));
-            
-            // C. Add 'active' class to the clicked button
-            this.classList.add('active');
-            
-        });
-    });
-    </script>
 </body>
 
 </html>
