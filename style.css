@@ -432,7 +432,10 @@ a {
 
 nav > a:hover{
 
+  background-color: #4c575d;
+  border: 2px white solid;
   margin: 20px;
+  transition: 0.5s;
 
 }
 
@@ -488,14 +491,7 @@ header > div {
         font-size: 40pt;
     }
 
-.link:hover{
 
-    background-color: #4c575d;
-    border: 2px white solid;
-    transition: 0.5s;
-
-
-}
 
 .reveal {
   opacity: 0;
