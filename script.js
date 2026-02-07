@@ -25,27 +25,34 @@ document.addEventListener("DOMContentLoaded", () => {
     const topBtn = document.getElementById("backToTop");
     const circle = document.querySelector('.progress-ring__circle');
     
-    // Circle math (Circumference)
+    // Initial Circle Setup
     const radius = circle.r.baseVal.value;
     const circumference = 2 * Math.PI * radius;
     circle.style.strokeDasharray = `${circumference} ${circumference}`;
     circle.style.strokeDashoffset = circumference;
 
-    // Scroll Function
+    // Optimized Scroll Function for Mobile & Desktop
     window.onscroll = function() {
-        // A. Slide-in from right
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        // Use window.pageYOffset for better mobile compatibility
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // A. Slide-in visibility (Threshold: 300px)
+        if (scrollPos > 300) {
             topBtn.classList.add("show");
         } else {
             topBtn.classList.remove("show");
         }
 
-        // B. Progress Ring Math
-        const scrollTotal = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrollPosition = document.documentElement.scrollTop;
-        const scrollPercentage = scrollPosition / scrollTotal;
-        const offset = circumference - (scrollPercentage * circumference);
-        circle.style.strokeDashoffset = offset;
+        // B. Progress Ring Calculation
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTotal = scrollHeight - clientHeight;
+        
+        if (scrollTotal > 0) {
+            const scrollPercentage = scrollPos / scrollTotal;
+            const offset = circumference - (scrollPercentage * circumference);
+            circle.style.strokeDashoffset = offset;
+        }
     };
 
     // Click to scroll top

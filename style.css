@@ -75,7 +75,7 @@ h2 {
 
 .events{
 
-  width: 90%;
+  width: 100%;
   border: 1px solid black;
   margin: 0 auto;
   margin-bottom: 80px;
@@ -629,9 +629,10 @@ header > div {
 
 .squares-grid {
     display: grid;
-    /* This creates 4 equal columns */
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 30px; /* Space between the squares */
+    /* This tells the browser: "Fit as many squares as you can, 
+       but don't let them get smaller than 280px wide." */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -724,9 +725,9 @@ body.fade-out {
 
 #backToTop {
     position: fixed;
-    bottom: 30px;
-    right: -70px; /* Hidden off-screen */
-    z-index: 99;
+    bottom: 20px; /* Slightly higher for thumb access */
+    right: -70px; /* Start off-screen */
+    z-index: 1000;
     width: 50px;
     height: 50px;
     background-color: #1a2b34;
@@ -735,28 +736,34 @@ body.fade-out {
     border-radius: 50%;
     cursor: pointer;
     
-    /* This centers the arrow */
-    display: flex;
+    /* These three lines ensure the arrow NEVER moves */
+    display: flex !important;
     align-items: center;
     justify-content: center;
-    
-    transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.3s;
+
+    transition: right 0.4s ease-out, transform 0.3s;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    
+    /* Prevents the button from being "tappable" while hidden */
+    visibility: hidden; 
+    
+    /* Fix for mobile Safari/Chrome centering */
+    -webkit-appearance: none;
 }
 
-/* The Progress Ring needs to sit behind or perfectly around the icon */
+#backToTop.show {
+    right: 20px;
+    visibility: visible;
+}
+
+/* Ensure the SVG is perfectly layered behind the arrow */
 .progress-ring {
     position: absolute;
     top: 0;
     left: 0;
-    transform: rotate(-90deg); /* Start the line at the top */
-    pointer-events: none; /* So the ring doesn't interfere with clicks */
-}
-
-/* The Arrow Icon */
-#backToTop i {
-    font-size: 18px;
-    transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
 }
 
 /* Fun hover effect: make the arrow bounce up slightly */
@@ -764,9 +771,6 @@ body.fade-out {
     transform: translateY(-3px);
 }
 
-#backToTop.show {
-    right: 30px; /* Slide in */
-}
 
 .progress-ring__circle {
     transition: stroke-dashoffset 0.1s;
@@ -836,4 +840,202 @@ body.fade-out {
 @keyframes construction-shimmer {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(200%); }
+}
+
+/* =========================================
+   11. MOBILE & TABLET OPTIMIZATIONS
+   ========================================= */
+
+@media (max-width: 768px) {
+    
+    /* Global Reset for narrow screens */
+    h1 {
+        font-size: 2.5rem !important; /* Scale down the massive h1 */
+        margin-left: 0 !important;
+        text-align: center;
+    }
+
+    .events .content {
+        flex-direction: column-reverse; /* Stacks image on top of text */
+        gap: 0;
+    }
+
+    .events .text {
+        padding: 40px 20px; /* Removes large desktop margins */
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .events .image {
+        width: 100%;
+        flex: none; /* Prevents the image from shrinking to 0 */
+    }
+
+    .events .image img {
+        width: 100%;
+        height: 300px; /* Gives the image a healthy height on phones */
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Header & Nav */
+    header {
+        flex-direction: column; /* Stack logo/title above the nav */
+        padding-bottom: 20px;
+    }
+
+    .brand {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #logo {
+        width: 100px; /* Smaller logo for mobile */
+        height: 100px !important;
+    }
+
+    #title {
+        margin-left: 0 !important; /* Remove that 100px margin */
+        text-align: center;
+    }
+
+    #title h1 {
+        line-height: 1.2;
+        font-size: 1.8rem;
+    }
+
+    nav {
+        margin-right: 0;
+        padding: 10px;
+        flex-wrap: wrap; /* Let buttons wrap to a second row */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .link {
+        padding: 10px 20px; /* Smaller buttons */
+        font-size: 14px;
+    }
+
+    /* Mission Section */
+    .mission .content {
+        flex-direction: column; /* Stack text and image */
+        height: auto; /* Let it grow naturally */
+    }
+
+    .mission .text {
+        padding: 30px;
+        font-size: 18px;
+    }
+
+    .mission .image {
+        height: 300px; /* Fixed height for the image on mobile */
+    }
+
+    /* Construction & Contact Sections */
+    .construction-container {
+        width: 95%;
+        padding: 40px 15px;
+    }
+
+    .construction-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .contact-info-left {
+        flex: none;
+        width: 100%;
+    }
+
+    /* Back to Top - Move it slightly so it doesn't block thumbs */
+    #backToTop {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .event-card {
+        max-width: 100%; /* Allow card to take full width */
+        padding: 0 15px; /* Add a little side breathing room */
+    }
+
+    .event-card-image-wrapper {
+        height: 350px; /* Reduce height from 700px to something reasonable for phones */
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .event-card-image-wrapper img {
+        filter: grayscale(0%); /* Optional: remove grayscale on mobile since hover isn't a thing on touchscreens */
+        object-fit: cover;    /* This is the "anti-squish" magic */
+    }
+
+    .event-card h3 {
+        font-size: 1.5rem; /* Shrink the title slightly so it fits on one or two lines */
+        text-align: center;
+    }
+
+    .event-details, .more-info {
+        text-align: center;
+        display: block; /* Makes the "More Info" link easier to tap */
+    }
+
+
+    
+}
+
+@media (max-width: 768px) {
+    /* 1. Ensure the grid has a clear vertical gap */
+    .squares-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 40px; /* Force space between stacked squares */
+    }
+
+    /* 2. Remove fixed heights so boxes can expand with text */
+    .info-square {
+        height: auto !important; 
+        min-height: 250px;
+        width: 100%;
+        margin-bottom: 0; /* Let the grid gap handle spacing */
+        
+        /* Stop padding from making the box wider than the screen */
+        box-sizing: border-box; 
+    }
+
+    /* 3. Disable the hover 'lift' on mobile */
+    /* On touchscreens, hover effects often get 'stuck' or cause overlaps */
+    .info-square:hover {
+        transform: scale(1.02); /* Slight scale is safer than translateY */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media (max-width: 768px) {
+    #backToTop {
+        /* Prevents the button from shifting when the address bar hides */
+        bottom: env(safe-area-inset-bottom, 20px); 
+    }
+}
+
+
+/* Extra small screens (Phones) */
+@media (max-width: 480px) {
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2x2 button grid */
+        width: 90%;
+    }
+    
+    .link {
+        text-align: center;
+    }
 }
